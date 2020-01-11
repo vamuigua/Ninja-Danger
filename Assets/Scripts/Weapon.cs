@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public GameObject projectile;
+    public Transform shotPoint;
+    public float timeBetweenShots;
 
-    }
+    private float shotTime;
 
     // Update is called once per frame
     void Update()
@@ -18,8 +18,18 @@ public class Weapon : MonoBehaviour
         //tranform the direction to an angle
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //convert the angle to a unity rotation
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         //make the weapon rotation face the direction of the mouse cursor position
         transform.rotation = rotation;
+
+        //Fire projectile
+        if (Input.GetMouseButton(0))
+        {
+            if (Time.time >= shotTime)
+            {
+                Instantiate(projectile, shotPoint.position, transform.rotation);
+                shotTime = Time.time + timeBetweenShots;
+            }
+        }
     }
 }
