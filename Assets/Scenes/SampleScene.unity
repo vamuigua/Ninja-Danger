@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8d493c6b6a9fe46aa4a0c9425fe09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2639092111537067856, guid: ed8099fc088b7f148a56d1ff441eab68,
+  projectile: {fileID: 4126315643187241551, guid: 618f98ffd56a51d4091d3e00df901e00,
     type: 3}
   shotPoint: {fileID: 853324815}
   timeBetweenShots: 0.3
