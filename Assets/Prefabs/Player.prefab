@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802967921106024}
   - component: {fileID: 2391802967921106027}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DropShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802968072562397}
   - component: {fileID: 2391802968072562396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802968209640731}
   - component: {fileID: 2391802968209640730}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802968447552214}
   - component: {fileID: 2391802968447552217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2391802968707044657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802968874407052}
   - component: {fileID: 2391802968874407055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,9 +441,9 @@ GameObject:
   - component: {fileID: 2391802969110346837}
   - component: {fileID: 2391802969110346836}
   - component: {fileID: 2391802969110346834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  health: 5
 --- !u!50 &2391802969110346836
 Rigidbody2D:
   serializedVersion: 4
@@ -556,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802969352819353}
   - component: {fileID: 2391802969352819352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802969547932563}
   - component: {fileID: 2391802969547932562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802969588302067}
   - component: {fileID: 2391802969588302066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2391802969850460020}
   - component: {fileID: 2391802969850460023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,6 +892,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gun_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824754611093395462, guid: 74e194ffbf874ae4f8aceacc56463dcb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3227488137154673322, guid: 74e194ffbf874ae4f8aceacc56463dcb,
         type: 3}

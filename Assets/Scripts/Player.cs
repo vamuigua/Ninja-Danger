@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    public float speed;
-
     private Rigidbody2D rb;
     private Animator anim;
-
     private Vector2 moveAmount;
+
+    public float speed;
+    public float health;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +40,15 @@ public class Player : MonoBehaviour
     {
         //move the player
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

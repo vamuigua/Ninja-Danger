@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2708367108735004754}
   - component: {fileID: 5756673136407011568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DropShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,8 +91,8 @@ GameObject:
   - component: {fileID: 6008574329461982487}
   - component: {fileID: 3672425051185812482}
   - component: {fileID: 638571388321286211}
-  - component: {fileID: 7907298114149677164}
-  m_Layer: 0
+  - component: {fileID: 3175655640265324240}
+  m_Layer: 9
   m_Name: Melee Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.28137732, y: 1.9495449}
@@ -183,7 +183,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7907298114149677164
+--- !u!114 &3175655640265324240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,10 +192,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6008574329461982485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2636f2dd3bea994db304eac8e6bd94e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ffde1191db882e439530eb6ad7cfc5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   health: 3
+  speed: 5
+  timeBetweenAttacks: 3
+  damage: 1
+  stopDistance: 15
+  attackSpeed: 1
 --- !u!1 &6008574329852507557
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6008574329852507558}
   - component: {fileID: 6008574329852507559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: glow_ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6008574330481410236}
   - component: {fileID: 6008574330481410235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: melee_ninja_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6008574330756477503}
   - component: {fileID: 6008574330756477502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: melee_ninja_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,6 +451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trails_ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686568222947926090, guid: b47eda3b957adf740a271fcefc55b270,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
