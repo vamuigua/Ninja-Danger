@@ -5,6 +5,8 @@ TextureImporter:
     21300000: summoner
     21300002: summoner_weapon
     21300004: summoner_4
+    21300006: summoner_body
+    21300008: summoner_weapon
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -98,21 +100,21 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: summoner
+      name: summoner_body
       rect:
         serializedVersion: 2
-        x: 367
-        y: 0
-        width: 950
-        height: 1080
+        x: 546
+        y: 35
+        width: 587
+        height: 1009
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20ad5fcf73ecba44e8daba3cf5c347c5
+      spriteID: 5bd632e0ccf0e264584e09ebe60b83a1
       vertices: []
       indices: 
       edges: []
@@ -121,18 +123,18 @@ TextureImporter:
       name: summoner_weapon
       rect:
         serializedVersion: 2
-        x: 1351
-        y: 35
-        width: 285
-        height: 1045
+        x: 1340
+        y: 16
+        width: 284
+        height: 1047
       alignment: 9
-      pivot: {x: 0.54198533, y: 0.7208318}
+      pivot: {x: 0.5546381, y: 0.72231}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce863f99c316b34fb4d72d66f199ef1
+      spriteID: b9db1a1ea8c3e49429a2fa265ab2103f
       vertices: []
       indices: 
       edges: []
