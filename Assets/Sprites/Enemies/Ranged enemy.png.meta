@@ -7,6 +7,7 @@ TextureImporter:
     21300004: Ranged enemy_wing
     21300006: Ranged enemy_eye
     21300008: Ranged enemy_leg
+    21300010: Ranged enemy_spit
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -108,7 +109,7 @@ TextureImporter:
         width: 440
         height: 416
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,7 +129,7 @@ TextureImporter:
         width: 434
         height: 412
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,7 +169,7 @@ TextureImporter:
         width: 287
         height: 275
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,6 +196,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 71821528a29b4864eb825a37663174f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ranged enemy_spit
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 204
+        width: 420
+        height: 484
+      alignment: 9
+      pivot: {x: 0.48768455, y: 0.7564832}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85add73663c5ee34385e9b3a06266bd3
       vertices: []
       indices: 
       edges: []
