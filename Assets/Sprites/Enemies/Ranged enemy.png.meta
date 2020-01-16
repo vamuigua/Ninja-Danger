@@ -204,12 +204,12 @@ TextureImporter:
       name: Ranged enemy_spit
       rect:
         serializedVersion: 2
-        x: 993
-        y: 204
-        width: 420
-        height: 484
+        x: 969
+        y: 126
+        width: 495
+        height: 720
       alignment: 9
-      pivot: {x: 0.48768455, y: 0.7564832}
+      pivot: {x: 0.45660436, y: 0.6140331}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
