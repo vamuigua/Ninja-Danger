@@ -436,10 +436,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  pickups:
+  - {fileID: 5019330665216577450, guid: 330da3fe1323ea6489f6b36faf76bd75, type: 3}
+  - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
+  - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
   health: 2
   speed: 17
   timeBetweenAttacks: 3
   damage: 1
+  pickUpChance: 30
   stopDistance: 10
   enemyBullet: {fileID: 8407514237055400035, guid: 38e9da7d3072039498d285a418ef2b99,
     type: 3}

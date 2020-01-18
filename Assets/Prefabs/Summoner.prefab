@@ -115,10 +115,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  pickups:
+  - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
   health: 5
   speed: 10
   timeBetweenAttacks: 2
   damage: 3
+  pickUpChance: 15
   minX: -53.1
   minY: -23.8
   maxX: 46.5

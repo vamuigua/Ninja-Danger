@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3282334574865693759}
   m_Layer: 0
   m_Name: gun02
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 3282334574865693756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.843182, y: 2.843182, z: 2.843182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3282334574481731968}
   m_Father: {fileID: 0}
