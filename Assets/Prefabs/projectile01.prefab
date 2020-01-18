@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2038383204846714073}
   - component: {fileID: 61093323644835662}
   m_Layer: 0
-  m_Name: projectile_01
+  m_Name: projectile01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8345f7203bca0040bc8637a74e79b76, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 6c5ac0e800a27d94e9c5fe3e6985fcd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83baeee95b5a27c4693f7bac79404c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 50
   lifeTime: 2
   damage: 1
   explosion: {fileID: 7686568222947926090, guid: b47eda3b957adf740a271fcefc55b270,
@@ -115,8 +115,8 @@ BoxCollider2D:
   m_Offset: {x: -0.6407143, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 1, y: 0.5}
-    oldSize: {x: 1.2814286, y: 0.27571428}
+    pivot: {x: 0.97818846, y: 0.521183}
+    oldSize: {x: 1.23, y: 0.26666668}
     newSize: {x: 1.2814286, y: 0.27571428}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -156,6 +156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
+        type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926093, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
