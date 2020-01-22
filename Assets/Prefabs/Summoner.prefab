@@ -122,7 +122,7 @@ MonoBehaviour:
   health: 5
   speed: 10
   timeBetweenAttacks: 2
-  damage: 3
+  damage: 2
   pickUpChance: 50
   healthPickupChance: 50
   minX: -53.1

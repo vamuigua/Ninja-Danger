@@ -477,7 +477,7 @@ MonoBehaviour:
     type: 3}
   emptyHeart: {fileID: -4560005611128487290, guid: 390325c9b2af96842b8cf334ad3394eb,
     type: 3}
-  speed: 20
+  speed: 30
   health: 5
 --- !u!50 &2391802969110346836
 Rigidbody2D:
