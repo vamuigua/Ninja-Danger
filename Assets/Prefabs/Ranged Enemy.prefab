@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -135,6 +136,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -219,6 +221,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -298,6 +301,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -439,12 +443,17 @@ MonoBehaviour:
   pickups:
   - {fileID: 5019330665216577450, guid: 330da3fe1323ea6489f6b36faf76bd75, type: 3}
   - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
+  - {fileID: 5019330665216577450, guid: 330da3fe1323ea6489f6b36faf76bd75, type: 3}
+  - {fileID: 5019330665216577450, guid: 330da3fe1323ea6489f6b36faf76bd75, type: 3}
   - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
+  healthPickup: {fileID: 2459342809867847891, guid: 1ebd72978b39f994aa41938409c11444,
+    type: 3}
   health: 2
   speed: 17
   timeBetweenAttacks: 3
   damage: 1
   pickUpChance: 30
+  healthPickupChance: 15
   stopDistance: 10
   enemyBullet: {fileID: 8407514237055400035, guid: 38e9da7d3072039498d285a418ef2b99,
     type: 3}
@@ -505,6 +514,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -584,6 +594,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
