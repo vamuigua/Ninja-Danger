@@ -93,7 +93,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -118,6 +118,8 @@ MonoBehaviour:
   pickups:
   - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
   healthPickup: {fileID: 2459342809867847891, guid: 1ebd72978b39f994aa41938409c11444,
+    type: 3}
+  deathEffect: {fileID: 6736311362857466173, guid: a8481d6c9b0813b49b27d20a0bc3f491,
     type: 3}
   health: 5
   speed: 10

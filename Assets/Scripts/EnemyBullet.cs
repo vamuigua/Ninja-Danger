@@ -6,6 +6,8 @@ public class EnemyBullet : MonoBehaviour
 {
     private Player playerScript;
     private Vector2 targetPosition;
+
+    public GameObject bulletEffect;
     public int damage;
     public float speed;
     void Start()
@@ -22,6 +24,7 @@ public class EnemyBullet : MonoBehaviour
         }
         else
         {
+            Instantiate(bulletEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -31,6 +34,7 @@ public class EnemyBullet : MonoBehaviour
         if (other.tag == "Player")
         {
             playerScript.TakeDamage(damage);
+            Instantiate(bulletEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

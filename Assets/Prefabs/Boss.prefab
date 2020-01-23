@@ -1127,7 +1127,11 @@ MonoBehaviour:
   - {fileID: 8418732477568187402, guid: 0c3c538103ef28045b521a4819957ca9, type: 3}
   - {fileID: 339805934827883050, guid: 2180517e931fb8c4e8fb096d7e914eb4, type: 3}
   - {fileID: 4376716893472548115, guid: 0025b56bbfeaf71479eb927f17c90651, type: 3}
-  health: 10
+  deathEffect: {fileID: 308701380782494412, guid: 29dfe3e9e88bdd84ea5ef1cef3c10a4f,
+    type: 3}
+  bloodSpatter: {fileID: 7796062282120876378, guid: 033addd367c5bf747a3e49748acc94fa,
+    type: 3}
+  health: 50
   spawnOffset: 10
   damage: 2
 --- !u!61 &8745254445772251556
@@ -1168,7 +1172,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 900
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

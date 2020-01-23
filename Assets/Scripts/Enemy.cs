@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     public GameObject[] pickups;
     public GameObject healthPickup;
+    public GameObject deathEffect;
 
     public int health;
     public float speed;
@@ -48,6 +49,8 @@ public class Enemy : MonoBehaviour
                     Instantiate(healthPickup, transform.position, transform.rotation);
                 }
             }
+
+            Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

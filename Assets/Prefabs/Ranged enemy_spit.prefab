@@ -58,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -97,8 +98,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0047478676, y: -1.2457016}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.48768455, y: 0.7564832}
-    oldSize: {x: 4.2, y: 4.84}
+    pivot: {x: 0.45660436, y: 0.6140331}
+    oldSize: {x: 4.95, y: 7.2}
     newSize: {x: 4.2, y: 4.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -119,5 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6d843e2c32bb449b642696d002ee61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletEffect: {fileID: 5071378573739679219, guid: c8f7bdac4c2511e47a38c518e246323e,
+    type: 3}
   damage: 1
   speed: 30

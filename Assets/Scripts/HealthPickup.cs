@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour
 {
     private Player playerScript;
+    public GameObject healthPickupEffect;
     public int healAmount;
     void Start()
     {
@@ -16,6 +17,7 @@ public class HealthPickup : MonoBehaviour
         if (other.tag == "Player")
         {
             playerScript.Heal(healAmount);
+            Instantiate(healthPickupEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3414100738885853049}
   - component: {fileID: 3414100738885853054}
   - component: {fileID: 3414100738885853055}
-  - component: {fileID: 3414100738885853052}
+  - component: {fileID: -1867451134991723101}
   m_Layer: 0
   m_Name: projectile02
   m_TagString: Untagged
@@ -59,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -95,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09966008, y: -0.09227735}
+  m_Offset: {x: -0.31086016, y: -0.27344775}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,9 +107,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44734648, y: 0.4454453}
+  m_Size: {x: 1.2921455, y: 1.2771189}
   m_EdgeRadius: 0
---- !u!114 &3414100738885853052
+--- !u!114 &-1867451134991723101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,14 +118,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3414100738885853053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83baeee95b5a27c4693f7bac79404c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: d58c1ca633d2d894dab1a72c9a4f2bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
   lifeTime: 0.8
-  damage: 3
+  damage: 5
   explosion: {fileID: 900560884277587826, guid: b860477a2a05992429487e7e69410952,
     type: 3}
+  bombRadius: 10
 --- !u!1001 &7890956239737646942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,16 +141,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926091, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 7686568222947926091, guid: b47eda3b957adf740a271fcefc55b270,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7686568222947926091, guid: b47eda3b957adf740a271fcefc55b270,
-        type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
@@ -156,26 +148,6 @@ PrefabInstance:
         type: 3}
       propertyPath: looping
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
-        type: 3}
-      propertyPath: ShapeModule.type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
-        type: 3}
-      propertyPath: ShapeModule.angle
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
-        type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
@@ -189,8 +161,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
+      propertyPath: ShapeModule.type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
@@ -209,6 +186,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 2f590dacfd1c5b640b80bf6a73964c9c,
+        type: 3}
+    - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
+        type: 3}
       propertyPath: NoiseModule.strength.scalar
       value: 10
       objectReference: {fileID: 0}
@@ -219,10 +202,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926092, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
-      propertyPath: UVModule.sprites.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300006, guid: 2f590dacfd1c5b640b80bf6a73964c9c,
-        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7686568222947926093, guid: b47eda3b957adf740a271fcefc55b270,
         type: 3}
       propertyPath: m_LocalPosition.x

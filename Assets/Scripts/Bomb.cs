@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Bomb : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
     public int damage;
 
     public GameObject explosion;
+    public float bombRadius = 5f;
 
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
+        DamageNearEnemies();
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -32,14 +33,31 @@ public class Projectile : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            //other.GetComponent<Enemy>().TakeDamage(damage);
             DestroyProjectile();
         }
         if (other.tag == "Boss")
         {
-            other.GetComponent<Boss>().TakeDamage(damage);
+            //other.GetComponent<Boss>().TakeDamage(damage);
             DestroyProjectile();
         }
 
+    }
+
+    void DamageNearEnemies()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, bombRadius);
+
+        foreach (Collider2D nearbyObject in colliders)
+        {
+            if (nearbyObject.tag == "Enemy")
+            {
+                nearbyObject.GetComponent<Enemy>().TakeDamage(damage);
+            }
+            else if (nearbyObject.tag == "Boss")
+            {
+                nearbyObject.GetComponent<Boss>().TakeDamage(damage);
+            }
+        }
     }
 }

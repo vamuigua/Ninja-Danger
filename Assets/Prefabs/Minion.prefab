@@ -120,6 +120,8 @@ MonoBehaviour:
   - {fileID: 5019330665216577450, guid: 330da3fe1323ea6489f6b36faf76bd75, type: 3}
   healthPickup: {fileID: 2459342809867847891, guid: 1ebd72978b39f994aa41938409c11444,
     type: 3}
+  deathEffect: {fileID: 6572715903774568975, guid: a89d5934c0ec6e1479d9e5ff0a4b0ac7,
+    type: 3}
   health: 1
   speed: 10
   timeBetweenAttacks: 0.5
