@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class Bomb : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Bomb : MonoBehaviour
     {
         DamageNearEnemies();
         Instantiate(explosion, transform.position, Quaternion.identity);
+        CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D other)
