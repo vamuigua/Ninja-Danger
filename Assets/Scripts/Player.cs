@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public Animator hurtPanel;
 
     public float speed;
     public int health;
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        hurtPanel.SetTrigger("hurt");
         health -= damageAmount;
         UpdateHealthUI(health);
         if (health <= 0)
