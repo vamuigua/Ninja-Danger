@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public Animator hurtPanel;
+    public Animator cameraAnim;
 
     public float speed;
     public int health;
@@ -34,10 +35,12 @@ public class Player : MonoBehaviour
         //play the required player animation
         if (moveInput != Vector2.zero)
         {
+            cameraAnim.SetBool("isMoving",true);
             anim.SetBool("isRunning", true);
         }
         else
         {
+            cameraAnim.SetBool("isMoving",false);
             anim.SetBool("isRunning", false);
         }
     }
