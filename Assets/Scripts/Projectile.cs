@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public float lifeTime;
     public int damage;
 
-    public GameObject explosion;
+    public GameObject particleExplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(particleExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D other)

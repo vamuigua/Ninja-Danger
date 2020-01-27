@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    private AudioSource source;
+
     public GameObject projectile;
     public Transform shotPoint;
+
     public float timeBetweenShots;
 
     private float shotTime;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +35,7 @@ public class Weapon : MonoBehaviour
         {
             if (Time.time >= shotTime)
             {
+                source.Play();
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 shotTime = Time.time + timeBetweenShots;
             }

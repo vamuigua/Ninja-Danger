@@ -10,6 +10,7 @@ public class Bomb : MonoBehaviour
     public int damage;
 
     public GameObject explosion;
+    public GameObject bombExplosion;
     public float bombRadius = 5f;
 
     void Start()
@@ -27,6 +28,7 @@ public class Bomb : MonoBehaviour
     void DestroyProjectile()
     {
         DamageNearEnemies();
+        Instantiate(bombExplosion, transform.position, transform.rotation);
         Instantiate(explosion, transform.position, Quaternion.identity);
         CameraShaker.Instance.ShakeOnce(4f, 4f, 0.1f, 1f);
         Destroy(gameObject);
@@ -35,12 +37,10 @@ public class Bomb : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            //other.GetComponent<Enemy>().TakeDamage(damage);
             DestroyProjectile();
         }
         if (other.tag == "Boss")
         {
-            //other.GetComponent<Boss>().TakeDamage(damage);
             DestroyProjectile();
         }
 
