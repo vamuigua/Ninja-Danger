@@ -1131,7 +1131,8 @@ MonoBehaviour:
   - {fileID: 4376716893472548115, guid: 0025b56bbfeaf71479eb927f17c90651, type: 3}
   deathEffect: {fileID: 308701380782494412, guid: 29dfe3e9e88bdd84ea5ef1cef3c10a4f,
     type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 3137742528018131663, guid: 52b5ec471d8d60e4db8f8cedc3a49cda,
+    type: 3}
   bloodSpatter: {fileID: 7796062282120876378, guid: 033addd367c5bf747a3e49748acc94fa,
     type: 3}
   health: 50

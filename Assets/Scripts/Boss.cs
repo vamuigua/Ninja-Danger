@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
     private Animator anim;
+    private Slider healthBar;
 
     public Enemy[] enemies;
     public GameObject deathEffect;
@@ -21,17 +23,21 @@ public class Boss : MonoBehaviour
     {
         halfHealth = health / 2;
         anim = GetComponent<Animator>();
+        healthBar = GameObject.FindObjectOfType<Slider>();
+        healthBar.maxValue = health;
+        healthBar.value = health;
     }
 
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
-
+        healthBar.value = health;
         if (health <= 0)
         {
             Instantiate(deathSound, transform.position, Quaternion.identity);
             Instantiate(bloodSpatter, transform.position, Quaternion.identity);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
+            healthBar.gameObject.SetActive(false);
             Destroy(gameObject);
         }
 

@@ -22,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
     private bool finishedSpawning;
 
     public GameObject boss;
+    public GameObject healthBar;
     public Transform bossSpawnPoint;
 
     private void Start()
@@ -46,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
             else
             {
                 Instantiate(boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
+                healthBar.SetActive(true);
             }
         }
     }
