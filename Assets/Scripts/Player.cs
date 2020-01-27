@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private AudioSource source;
     private Vector2 moveAmount;
 
     public Image[] hearts;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public Sprite emptyHeart;
     public Animator hurtPanel;
     public Animator cameraAnim;
+    public AudioClip [] hurtSounds;
 
     public float speed;
     public int health;
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -53,6 +56,10 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        int randNum = Random.Range(0, hurtSounds.Length);
+        source.clip = hurtSounds[randNum];
+        source.Play();
+
         hurtPanel.SetTrigger("hurt");
         health -= damageAmount;
         UpdateHealthUI(health);

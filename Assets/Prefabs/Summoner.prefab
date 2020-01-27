@@ -121,6 +121,8 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 6736311362857466173, guid: a8481d6c9b0813b49b27d20a0bc3f491,
     type: 3}
+  deathSound: {fileID: 7400952451995267741, guid: 643947a2178db6440a0de78f5e0822d2,
+    type: 3}
   health: 5
   speed: 10
   timeBetweenAttacks: 2

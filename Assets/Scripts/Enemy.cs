@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] pickups;
     public GameObject healthPickup;
     public GameObject deathEffect;
-
+    public GameObject deathSound;
     public int health;
     public float speed;
     public float timeBetweenAttacks;
@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
             }
 
             Instantiate(deathEffect, transform.position, transform.rotation);
+            Instantiate(deathSound, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

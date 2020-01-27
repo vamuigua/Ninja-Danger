@@ -450,6 +450,8 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 7352766167332326130, guid: ac53054db02938441bca545c647685ce,
     type: 3}
+  deathSound: {fileID: 7051736753463400720, guid: 34b9bd1615195e240aa918cfa32d8d20,
+    type: 3}
   health: 2
   speed: 17
   timeBetweenAttacks: 3
@@ -458,6 +460,8 @@ MonoBehaviour:
   healthPickupChance: 15
   stopDistance: 10
   enemyBullet: {fileID: 8407514237055400035, guid: 38e9da7d3072039498d285a418ef2b99,
+    type: 3}
+  spitSound: {fileID: 1171509364902451555, guid: 525fa9b4bdae368439916799aa86ef6f,
     type: 3}
   shotPoint: {fileID: 8643489869566671941}
 --- !u!1 &1459685420342993260

@@ -9,6 +9,7 @@ public class RangedEnemy : Enemy
     private float attackTime;
     public float stopDistance;
     public GameObject enemyBullet;
+    public GameObject spitSound;
     public Transform shotPoint;
     // Start is called before the first frame update
     public override void Start()
@@ -42,5 +43,6 @@ public class RangedEnemy : Enemy
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         shotPoint.rotation = rotation;
         Instantiate(enemyBullet, shotPoint.position, shotPoint.rotation);
+        Instantiate(spitSound, transform.position, Quaternion.identity);
     }
 }
