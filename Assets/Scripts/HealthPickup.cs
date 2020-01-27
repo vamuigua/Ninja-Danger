@@ -5,13 +5,17 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour
 {
     private Player playerScript;
+    private GameObject player;
     public GameObject healthPickupEffect;
     public GameObject healthSound;
     public int healAmount;
 
     void Start()
     {
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null){
+            playerScript = player.GetComponent<Player>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

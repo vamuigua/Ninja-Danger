@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour
 
     public Enemy[] enemies;
     public GameObject deathEffect;
+    public GameObject deathSound;
     public GameObject bloodSpatter;
 
     private int halfHealth;
@@ -28,6 +29,7 @@ public class Boss : MonoBehaviour
 
         if (health <= 0)
         {
+            Instantiate(deathSound, transform.position, Quaternion.identity);
             Instantiate(bloodSpatter, transform.position, Quaternion.identity);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
