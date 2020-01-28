@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 16589f90601b8984fa4e6430065b86b5
+guid: 856c9ba5bc5204b41a4a3e5c3a527ae2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7773915878633259197
-    second: Win Menu_0
-  - first:
-      213: 2895320563437721553
-    second: Win Menu_1
-  - first:
-      213: -2920695421652719921
-    second: Win Menu_3
-  - first:
-      213: 4082087254494166928
-    second: Win Menu_4
+      213: 5616874376279751606
+    second: Rules_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Win Menu_0
+      name: Rules_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
-        width: 647
-        height: 863
+        x: 587
+        y: 834
+        width: 725
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,71 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a413ce8bf5734a943bb6d937c9441a8f
-      internalID: 7773915878633259197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Menu_1
-      rect:
-        serializedVersion: 2
-        x: 661
-        y: 801
-        width: 1170
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f1f2e887e968fb48b03697a9ad0f1ea
-      internalID: 2895320563437721553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Menu_3
-      rect:
-        serializedVersion: 2
-        x: 963
-        y: 427
-        width: 858
-        height: 186
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a71150e932a53f343b63ca2eee1b73fd
-      internalID: -2920695421652719921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Win Menu_4
-      rect:
-        serializedVersion: 2
-        x: 963
-        y: 185
-        width: 675
-        height: 201
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 499de8d7d5ebfe04a99a5f9ec31e5796
-      internalID: 4082087254494166928
+      spriteID: 121cd9dbbb8405741886c08fe1bb910c
+      internalID: 5616874376279751606
       vertices: []
       indices: 
       edges: []
