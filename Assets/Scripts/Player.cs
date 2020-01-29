@@ -65,7 +65,12 @@ public class Player : MonoBehaviour
         hurtPanel.SetTrigger("hurt");
         health -= damageAmount;
         UpdateHealthUI(health);
-        if (health <= 0)
+
+        if (health == 1)
+        {
+            hurtPanel.SetTrigger("critical");
+        }
+        else if (health <= 0)
         {
             Destroy(gameObject);
             sceneTransitionAnim.OnLoadScene("Lose");
@@ -102,6 +107,10 @@ public class Player : MonoBehaviour
         else
         {
             health += healAmount;
+            if (health > 1)
+            {
+                hurtPanel.SetTrigger("idle");
+            }
         }
         UpdateHealthUI(health);
     }
