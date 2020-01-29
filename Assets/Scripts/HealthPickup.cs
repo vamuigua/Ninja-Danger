@@ -13,7 +13,8 @@ public class HealthPickup : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null){
+        if (player != null)
+        {
             playerScript = player.GetComponent<Player>();
         }
     }
@@ -22,10 +23,13 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Instantiate(healthSound, transform.position, Quaternion.identity);
-            playerScript.Heal(healAmount);
-            Instantiate(healthPickupEffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (playerScript.health != 5)
+            {
+                Instantiate(healthSound, transform.position, Quaternion.identity);
+                playerScript.Heal(healAmount);
+                Instantiate(healthPickupEffect, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
     }
 }
