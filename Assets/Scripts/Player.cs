@@ -9,13 +9,14 @@ public class Player : MonoBehaviour
     private Animator anim;
     private AudioSource source;
     private Vector2 moveAmount;
+    private SceneTransitions sceneTransitionAnim;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public Animator hurtPanel;
     public Animator cameraAnim;
-    public AudioClip [] hurtSounds;
+    public AudioClip[] hurtSounds;
 
     public float speed;
     public int health;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sceneTransitionAnim = FindObjectOfType<SceneTransitions>();
     }
 
     // Update is called once per frame
@@ -38,12 +40,12 @@ public class Player : MonoBehaviour
         //play the required player animation
         if (moveInput != Vector2.zero)
         {
-            cameraAnim.SetBool("isMoving",true);
+            cameraAnim.SetBool("isMoving", true);
             anim.SetBool("isRunning", true);
         }
         else
         {
-            cameraAnim.SetBool("isMoving",false);
+            cameraAnim.SetBool("isMoving", false);
             anim.SetBool("isRunning", false);
         }
     }
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            sceneTransitionAnim.OnLoadScene("Lose");
         }
     }
 

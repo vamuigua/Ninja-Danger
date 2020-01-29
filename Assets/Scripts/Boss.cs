@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour
 {
     private Animator anim;
     private Slider healthBar;
+    private SceneTransitions sceneTransitionAnim;
 
     public Enemy[] enemies;
     public GameObject deathEffect;
@@ -24,6 +25,7 @@ public class Boss : MonoBehaviour
         halfHealth = health / 2;
         anim = GetComponent<Animator>();
         healthBar = GameObject.FindObjectOfType<Slider>();
+        sceneTransitionAnim = FindObjectOfType<SceneTransitions>();
         healthBar.maxValue = health;
         healthBar.value = health;
     }
@@ -39,6 +41,8 @@ public class Boss : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             healthBar.gameObject.SetActive(false);
             Destroy(gameObject);
+            sceneTransitionAnim.OnLoadScene("Win");
+
         }
 
         if (health <= halfHealth)
