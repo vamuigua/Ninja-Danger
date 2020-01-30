@@ -127,11 +127,6 @@ public class Player : MonoBehaviour
     public void addWeapon(Weapon newWeapon)
     {
         availableWeapons.Add(newWeapon);
-        // currentWeapon = availableWeapons[selectedWeaponPos];
-        for (int i = 0; i < availableWeapons.Count; i++)
-        {
-            print(availableWeapons[i]);
-        }
     }
 
     public void switchWeapon()

@@ -1,13 +1,27 @@
 fileFormatVersion: 2
 guid: 3ad44e068881abe4a8fc6c2f4104b493
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: guns_outline_0
-    21300002: guns_outline_1
-    21300004: guns_outline_2
-    21300006: guns_outline_3
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: guns_outline_0
+  - first:
+      213: 21300002
+    second: guns_outline_1
+  - first:
+      213: 21300004
+    second: guns_outline_2
+  - first:
+      213: 21300006
+    second: guns_outline_3
+  - first:
+      213: 7428581414127607289
+    second: guns_outline_4
+  - first:
+      213: -610601756584846001
+    second: guns_outline_5
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -62,7 +76,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -73,7 +87,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -84,7 +99,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -95,6 +111,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -102,18 +119,19 @@ TextureImporter:
       name: guns_outline_0
       rect:
         serializedVersion: 2
-        x: 84
-        y: 737
-        width: 372
-        height: 273
+        x: 70
+        y: 730
+        width: 395
+        height: 289
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8b6352a369b095489ca8283327e38d3
+      spriteID: 7f21b568a1f5aed49aa08fee675366be
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -127,13 +145,14 @@ TextureImporter:
         width: 388
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f98526f952e56b0419ce953cc922b9aa
+      spriteID: 89462c0b86a005c439172a3a6d288461
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -144,16 +163,17 @@ TextureImporter:
         serializedVersion: 2
         x: 84
         y: 482
-        width: 427
-        height: 211
+        width: 436
+        height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1841f4c4eca66f044be44d2b301770a7
+      spriteID: 5f43d7b824fb24440a175ab0f34ef0f6
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -162,18 +182,61 @@ TextureImporter:
       name: guns_outline_3
       rect:
         serializedVersion: 2
-        x: 568
+        x: 570
         y: 548
-        width: 216
+        width: 213
         height: 209
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e93ad859b715c8746b609872a3e7cded
+      spriteID: 859d76049f2ccb24e835e4dbbe1bdfe5
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guns_outline_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 192
+        width: 603
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab16aa715b78fec4680d3fc24196d19e
+      internalID: 7428581414127607289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guns_outline_5
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 306
+        width: 281
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ccd68cbaf19c040b6221fe3d2a3771
+      internalID: -610601756584846001
       vertices: []
       indices: 
       edges: []
@@ -182,10 +245,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 3577f6561bfc8f84fa9badb39f9a84cb
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

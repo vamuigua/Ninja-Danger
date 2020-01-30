@@ -1,14 +1,42 @@
 fileFormatVersion: 2
 guid: 6c5ac0e800a27d94e9c5fe3e6985fcd9
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: gun_01
-    21300002: gun01
-    21300004: projectile01
-    21300006: gun02
-    21300008: projectile02
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: gun_01
+  - first:
+      213: 21300002
+    second: gun01
+  - first:
+      213: 21300004
+    second: projectile01
+  - first:
+      213: 21300006
+    second: gun02
+  - first:
+      213: 21300008
+    second: projectile02
+  - first:
+      213: 7362661061344524757
+    second: guns_0
+  - first:
+      213: -7349882584872989000
+    second: guns_1
+  - first:
+      213: -3476979527478288156
+    second: guns_2
+  - first:
+      213: -9170448629031416532
+    second: guns_3
+  - first:
+      213: -2395591618090941519
+    second: guns_4
+  - first:
+      213: -8012370926812475621
+    second: guns_5
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +91,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -74,7 +102,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -85,7 +114,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -96,17 +126,18 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gun01
+      name: guns_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 747
-        width: 354
-        height: 253
+        x: 89
+        y: 742
+        width: 364
+        height: 264
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,39 +145,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54475d2ebc547894e9108211e46232db
+      spriteID: 79ec42ed7051f014abd6e3db42946825
+      internalID: 7362661061344524757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile01
+      name: guns_1
       rect:
         serializedVersion: 2
         x: 539
-        y: 920
-        width: 369
-        height: 80
+        y: 921
+        width: 368
+        height: 79
       alignment: 9
-      pivot: {x: 0.97818846, y: 0.521183}
+      pivot: {x: 0.96518725, y: 0.4787559}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e990d1fd3fad29a4488db6e416464971
+      spriteID: 8644d5e605cd7554aae0c6b925d693f7
+      internalID: -7349882584872989000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gun02
+      name: guns_2
       rect:
         serializedVersion: 2
         x: 94
         y: 492
-        width: 407
-        height: 192
+        width: 418
+        height: 191
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,19 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e52fe91efd70f2a4c83f4e2f6951e83c
+      spriteID: 755047d0bcb019e4d96d056348948db3
+      internalID: -3476979527478288156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile02
+      name: guns_3
       rect:
         serializedVersion: 2
         x: 580
-        y: 558
+        y: 559
         width: 194
-        height: 189
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,7 +208,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fab4eff24554f114e9b5c6f8246ce715
+      spriteID: 68862d5b31785154ebf32d01241c9af9
+      internalID: -9170448629031416532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guns_4
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 198
+        width: 573
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01789b4e046ea14a8282832a21e2c9a
+      internalID: -2395591618090941519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guns_5
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 319
+        width: 256
+        height: 121
+      alignment: 9
+      pivot: {x: 0.9433306, y: 0.48195362}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1224336c37099494a8d09b28d7e46987
+      internalID: -8012370926812475621
       vertices: []
       indices: 
       edges: []
@@ -183,10 +260,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 1a03238a097d2d04180c6f2fc4819194
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
