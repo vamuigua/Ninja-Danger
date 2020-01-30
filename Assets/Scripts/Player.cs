@@ -18,9 +18,13 @@ public class Player : MonoBehaviour
     public Animator cameraAnim;
     public AudioClip[] hurtSounds;
 
+    private Weapon NextWeaponToEquip;
+    private int selectedWeaponPos = 0;
     public float speed;
     public int health;
 
+    [HideInInspector]
+    public List<Weapon> availableWeapons = new List<Weapon>();
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +51,11 @@ public class Player : MonoBehaviour
         {
             cameraAnim.SetBool("isMoving", false);
             anim.SetBool("isRunning", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            switchWeapon();
         }
     }
 
@@ -113,5 +122,38 @@ public class Player : MonoBehaviour
             }
         }
         UpdateHealthUI(health);
+    }
+
+    public void addWeapon(Weapon newWeapon)
+    {
+        availableWeapons.Add(newWeapon);
+        // currentWeapon = availableWeapons[selectedWeaponPos];
+        for (int i = 0; i < availableWeapons.Count; i++)
+        {
+            print(availableWeapons[i]);
+        }
+    }
+
+    public void switchWeapon()
+    {
+        if (availableWeapons.Count > 1)
+        {
+            //find next gun in the list to equip
+            if (selectedWeaponPos == availableWeapons.Count - 1)
+            {
+                selectedWeaponPos = 0;
+            }
+            else
+            {
+                selectedWeaponPos = selectedWeaponPos + 1;
+            }
+
+            //set next gun to equip
+            NextWeaponToEquip = availableWeapons[selectedWeaponPos];
+            //find the current gun & destroy the current held gun
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            //equip gun to player
+            Instantiate(NextWeaponToEquip, transform.position, transform.rotation, transform);
+        }
     }
 }
