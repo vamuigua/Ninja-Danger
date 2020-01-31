@@ -27,7 +27,7 @@ public class Pickup : MonoBehaviour
             {
                 Instantiate(pickUpSound, transform.position, Quaternion.identity);
                 player.ChangeWeapon(weaponToEquip);
-                player.addWeapon(weaponToEquip);
+                player.addWeapon(weaponToEquip, gameObject.GetComponent<SpriteRenderer>().sprite);
                 Destroy(gameObject);
             }
         }

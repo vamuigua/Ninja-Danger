@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private SceneTransitions sceneTransitionAnim;
 
     public Image[] hearts;
+    public Image[] weaponsSlots;
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public Animator hurtPanel;
@@ -107,6 +108,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    void UpdateWeaponSlots(Sprite newWeapon)
+    {
+        for (int i = 0; i < weaponsSlots.Length; i++)
+        {
+            bool isEmpty = weaponsSlots[i].GetComponent<WeaponSlot>().empty;
+
+            if (isEmpty == true)
+            {
+                // weaponsSlots[i].sprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
+                weaponsSlots[i].sprite = newWeapon;
+                weaponsSlots[i].GetComponent<RectTransform>().localScale = new Vector3(0.28f, 0.28f, 0.28f);
+                weaponsSlots[i].GetComponent<WeaponSlot>().empty = false;
+                break;
+            }
+        }
+    }
+
     public void Heal(int healAmount)
     {
         if (health + healAmount > 5)
@@ -124,9 +142,10 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
     }
 
-    public void addWeapon(Weapon newWeapon)
+    public void addWeapon(Weapon newWeapon, Sprite weaponSprite)
     {
         availableWeapons.Add(newWeapon);
+        UpdateWeaponSlots(weaponSprite);
     }
 
     public void switchWeapon()

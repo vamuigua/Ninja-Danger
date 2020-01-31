@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         //move the camera to player's position, only if the player's transform posiion is not null
         if (playerTransform != null)
