@@ -116,7 +116,6 @@ public class Player : MonoBehaviour
 
             if (isEmpty == true)
             {
-                // weaponsSlots[i].sprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
                 weaponsSlots[i].sprite = newWeapon;
                 weaponsSlots[i].GetComponent<RectTransform>().localScale = new Vector3(0.28f, 0.28f, 0.28f);
                 weaponsSlots[i].GetComponent<WeaponSlot>().empty = false;
