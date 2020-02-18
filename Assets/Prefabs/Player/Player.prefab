@@ -438,6 +438,7 @@ Transform:
   - {fileID: 2391802968447552214}
   - {fileID: 2391802969352819353}
   - {fileID: 2391802967921106024}
+  - {fileID: 5090955424773475078}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -478,6 +479,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  weaponsSlots: []
   fullHeart: {fileID: 4889466856081955844, guid: 390325c9b2af96842b8cf334ad3394eb,
     type: 3}
   emptyHeart: {fileID: -4560005611128487290, guid: 390325c9b2af96842b8cf334ad3394eb,
@@ -487,6 +489,7 @@ MonoBehaviour:
   hurtSounds: []
   speed: 30
   health: 5
+  availableWeapons: []
 --- !u!50 &2391802969110346836
 Rigidbody2D:
   serializedVersion: 4
@@ -856,3 +859,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5836113064469697025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5090955424773475078}
+  m_Layer: 8
+  m_Name: WeaponHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5090955424773475078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836113064469697025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2391802969110346838}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

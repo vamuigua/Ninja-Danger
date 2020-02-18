@@ -11,4 +11,13 @@ public class WeaponSlot : MonoBehaviour
     {
         empty = true;
     }
+
+    //Drop the weapon in the weapon slot
+    public void DropItem()
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
 }

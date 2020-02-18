@@ -11,22 +11,21 @@ public class Player : MonoBehaviour
     private Vector2 moveAmount;
     private SceneTransitions sceneTransitionAnim;
 
+    public GameObject WeaponHolder;
     public Image[] hearts;
-    public Image[] weaponsSlots;
+    public GameObject[] weaponsSlots;
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public Animator hurtPanel;
     public Animator cameraAnim;
     public AudioClip[] hurtSounds;
 
-    private Weapon NextWeaponToEquip;
-    private int selectedWeaponPos = 0;
     public float speed;
     public int health;
 
     [HideInInspector]
     public List<Weapon> availableWeapons = new List<Weapon>();
-    // Start is called before the first frame update
+
     void Start()
     {
         source = GetComponent<AudioSource>();
@@ -35,7 +34,6 @@ public class Player : MonoBehaviour
         sceneTransitionAnim = FindObjectOfType<SceneTransitions>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //check the move input from the player
@@ -53,19 +51,16 @@ public class Player : MonoBehaviour
             cameraAnim.SetBool("isMoving", false);
             anim.SetBool("isRunning", false);
         }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            switchWeapon();
-        }
     }
 
+    //FixedUpdate used when Physics is involved e.g when an object has a rigidbody
     private void FixedUpdate()
     {
         //move the player
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
     }
 
+    // makes the player to take damage
     public void TakeDamage(int damageAmount)
     {
         int randNum = Random.Range(0, hurtSounds.Length);
@@ -87,12 +82,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ChangeWeapon(Weapon weaponToEquip)
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-        Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
-    }
-
+    // updates the Health UI Status
     void UpdateHealthUI(int currentHealth)
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -108,22 +98,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void UpdateWeaponSlots(Sprite newWeapon)
-    {
-        for (int i = 0; i < weaponsSlots.Length; i++)
-        {
-            bool isEmpty = weaponsSlots[i].GetComponent<WeaponSlot>().empty;
-
-            if (isEmpty == true)
-            {
-                weaponsSlots[i].sprite = newWeapon;
-                weaponsSlots[i].GetComponent<RectTransform>().localScale = new Vector3(0.28f, 0.28f, 0.28f);
-                weaponsSlots[i].GetComponent<WeaponSlot>().empty = false;
-                break;
-            }
-        }
-    }
-
+    //Function that heals the Player when a life id obtained 
     public void Heal(int healAmount)
     {
         if (health + healAmount > 5)
@@ -141,32 +116,13 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
     }
 
-    public void addWeapon(Weapon newWeapon, Sprite weaponSprite)
+    // adds the obtained Weapon to the weapons slot
+    public void addWeapon(Weapon newWeapon, int Slot_i)
     {
-        availableWeapons.Add(newWeapon);
-        UpdateWeaponSlots(weaponSprite);
-    }
-
-    public void switchWeapon()
-    {
-        if (availableWeapons.Count > 1)
-        {
-            //find next gun in the list to equip
-            if (selectedWeaponPos == availableWeapons.Count - 1)
-            {
-                selectedWeaponPos = 0;
-            }
-            else
-            {
-                selectedWeaponPos = selectedWeaponPos + 1;
-            }
-
-            //set next gun to equip
-            NextWeaponToEquip = availableWeapons[selectedWeaponPos];
-            //find the current gun & destroy the current held gun
-            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-            //equip gun to player
-            Instantiate(NextWeaponToEquip, transform.position, transform.rotation, transform);
-        }
+        Weapon newGun = Instantiate(newWeapon, transform.position, Quaternion.identity, WeaponHolder.transform);
+        newGun.currentWeaponSlot = Slot_i;
+        WeaponSwitching weaponSwitching = WeaponHolder.GetComponent<WeaponSwitching>();
+        weaponSwitching.currentAvailableWeapons++;
+        weaponSwitching.SelectWeapon();
     }
 }

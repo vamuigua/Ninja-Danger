@@ -100,7 +100,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.74, y: 2.63}
+    oldSize: {x: 6.03, y: 2.77}
     newSize: {x: 4.27, y: 2.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,4 +124,6 @@ MonoBehaviour:
   weaponToEquip: {fileID: 1337704569180315214, guid: 3813097b89fac7c4190210216c1c0259,
     type: 3}
   pickUpSound: {fileID: 7738661653570455911, guid: 1dea6d425fd571647bc6692ecb040d29,
+    type: 3}
+  itemButton: {fileID: 6681621637152641728, guid: 14fefd80716a8de4d9f532ad30f5a44f,
     type: 3}

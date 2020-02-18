@@ -5,25 +5,27 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     private AudioSource source;
+    private Player player;
+    private WeaponSwitching weaponSwitching;
 
     public GameObject projectile;
     public GameObject reloadSound;
     public Transform shotPoint;
 
-
-    public float timeBetweenShots;
-
     private float shotTime;
     private int currentAmmo;
-    private bool isReloading = false;
 
+    public float timeBetweenShots;
     public float reloadTime = 2f;
     public int maxAmmo = 10;
+    public int currentWeaponSlot;
 
     void Start()
     {
         currentAmmo = maxAmmo;
         source = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        weaponSwitching = GameObject.FindGameObjectWithTag("WeaponHolder").GetComponent<WeaponSwitching>();
     }
 
     // Update is called once per frame
@@ -31,22 +33,33 @@ public class Weapon : MonoBehaviour
     {
         //get the direction of the mouse position form the weapon position
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        //tranform the direction to an angle
+        //tranform the direction to an angles
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //convert the angle to a unity rotation
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         //make the weapon rotation face the direction of the mouse cursor position
         transform.rotation = rotation;
 
-        if (isReloading)
+        //check if gun ammo is replenished
+        if (currentAmmo <= 0 && player != null)
         {
-            return;
-        }
+            weaponSwitching.currentAvailableWeapons--;
 
-        if (currentAmmo <= 0)
-        {
-            StartCoroutine(Reload());
-            return;
+            //get the WeaponSlot for the current active weapon
+            WeaponSlot weaponSlot = player.weaponsSlots[currentWeaponSlot].GetComponent<WeaponSlot>();
+            weaponSlot.empty = true;
+            weaponSlot.DropItem();
+
+            //check if only one weapon is left in the weapon slot
+            if (weaponSwitching.currentAvailableWeapons == 1)
+            {
+                foreach (Transform weapon in weaponSwitching.transform)
+                {
+                    weapon.gameObject.SetActive(true);
+                }
+            }
+
+            Destroy(gameObject);
         }
 
         //Fire projectile
@@ -56,16 +69,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private IEnumerator Reload()
-    {
-        isReloading = true;
-        Debug.Log("Reloading...");
-        Instantiate(reloadSound, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(reloadTime);
-        currentAmmo = maxAmmo;
-        isReloading = false;
-    }
-
+    //fire the weapon projectile
     private void shoot()
     {
         if (Time.time >= shotTime)

@@ -98,6 +98,8 @@ MonoBehaviour:
     type: 3}
   pickUpSound: {fileID: 7738661653570455911, guid: 1dea6d425fd571647bc6692ecb040d29,
     type: 3}
+  itemButton: {fileID: 3382131921744123182, guid: 97e3db0c642cb824d8af4e74ea2eb39b,
+    type: 3}
 --- !u!61 &5019330665216577451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -115,7 +117,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.72, y: 2.73}
+    oldSize: {x: 3.95, y: 2.89}
     newSize: {x: 3.72, y: 2.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

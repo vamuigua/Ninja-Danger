@@ -6,29 +6,35 @@ public class Pickup : MonoBehaviour
 {
     public Weapon weaponToEquip;
     public GameObject pickUpSound;
+    public GameObject itemButton;
 
-    private bool foundExistingGun = false;
-
+    // on collision with other colliders
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             Player player = other.GetComponent<Player>();
+            CheckAvailableWeaponSlot(player);
+        }
+    }
 
-            for (int i = 0; i < player.availableWeapons.Count; i++)
-            {
-                if (player.availableWeapons[i] == weaponToEquip)
-                {
-                    foundExistingGun = true;
-                }
-            }
+    // checks if there is an empty slot in the weapons slot in order to add a new weapon
+    private void CheckAvailableWeaponSlot(Player player)
+    {
+        for (int i = 0; i < player.weaponsSlots.Length; i++)
+        {
+            bool isEmpty = player.weaponsSlots[i].GetComponent<WeaponSlot>().empty;
+            WeaponSwitching weaponSwitching = GameObject.FindGameObjectWithTag("WeaponHolder").GetComponent<WeaponSwitching>();
 
-            if (foundExistingGun == false)
+            // checks for the status of the weaponSlot at index 'i' and if the max no. of weapons to carry has been reached
+            if (isEmpty && weaponSwitching.currentAvailableWeapons < weaponSwitching.maxWeaponsToCarry)
             {
                 Instantiate(pickUpSound, transform.position, Quaternion.identity);
-                player.ChangeWeapon(weaponToEquip);
-                player.addWeapon(weaponToEquip, gameObject.GetComponent<SpriteRenderer>().sprite);
+                Instantiate(itemButton, player.weaponsSlots[i].transform, false);
+                player.weaponsSlots[i].GetComponent<WeaponSlot>().empty = false;
+                player.addWeapon(weaponToEquip, i);
                 Destroy(gameObject);
+                break;
             }
         }
     }
