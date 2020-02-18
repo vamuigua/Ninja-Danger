@@ -5,16 +5,10 @@ using UnityEngine;
 public class WeaponSlot : MonoBehaviour
 {
     [HideInInspector]
-    public bool empty;
+    public bool empty = true;
 
     void Start()
     {
         empty = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

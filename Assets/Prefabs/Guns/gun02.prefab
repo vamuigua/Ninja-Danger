@@ -128,8 +128,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3414100738885853053, guid: 10e9d58dbc2774c4f937a9a38ca7bfc3,
     type: 3}
+  reloadSound: {fileID: 2169387440914380834, guid: b4ac1742babbff4428fec1c82c12a3ff,
+    type: 3}
   shotPoint: {fileID: 3282334574481731968}
   timeBetweenShots: 1.5
+  reloadTime: 3
+  maxAmmo: 5
 --- !u!82 &5912257387705650949
 AudioSource:
   m_ObjectHideFlags: 0

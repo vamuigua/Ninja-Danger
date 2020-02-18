@@ -7,14 +7,22 @@ public class Weapon : MonoBehaviour
     private AudioSource source;
 
     public GameObject projectile;
+    public GameObject reloadSound;
     public Transform shotPoint;
+
 
     public float timeBetweenShots;
 
     private float shotTime;
+    private int currentAmmo;
+    private bool isReloading = false;
+
+    public float reloadTime = 2f;
+    public int maxAmmo = 10;
 
     void Start()
     {
+        currentAmmo = maxAmmo;
         source = GetComponent<AudioSource>();
     }
 
@@ -30,15 +38,42 @@ public class Weapon : MonoBehaviour
         //make the weapon rotation face the direction of the mouse cursor position
         transform.rotation = rotation;
 
+        if (isReloading)
+        {
+            return;
+        }
+
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         //Fire projectile
         if (Input.GetMouseButton(0))
         {
-            if (Time.time >= shotTime)
-            {
-                source.Play();
-                Instantiate(projectile, shotPoint.position, transform.rotation);
-                shotTime = Time.time + timeBetweenShots;
-            }
+            shoot();
+        }
+    }
+
+    private IEnumerator Reload()
+    {
+        isReloading = true;
+        Debug.Log("Reloading...");
+        Instantiate(reloadSound, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(reloadTime);
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
+
+    private void shoot()
+    {
+        if (Time.time >= shotTime)
+        {
+            currentAmmo--;
+            source.Play();
+            Instantiate(projectile, shotPoint.position, transform.rotation);
+            shotTime = Time.time + timeBetweenShots;
         }
     }
 }
