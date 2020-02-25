@@ -17,7 +17,11 @@ public class WeaponSlot : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            GameObject.Destroy(child.gameObject);
+            if (child.gameObject.tag == "WeaponButton")
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+            child.gameObject.SetActive(false);
         }
     }
 }

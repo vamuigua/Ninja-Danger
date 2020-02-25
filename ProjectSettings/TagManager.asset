@@ -9,6 +9,7 @@ TagManager:
   - patrolPoints
   - Boss
   - WeaponHolder
+  - WeaponButton
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2680869453
     locked: 0

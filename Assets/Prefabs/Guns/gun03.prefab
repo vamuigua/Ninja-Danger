@@ -130,10 +130,13 @@ MonoBehaviour:
     type: 3}
   reloadSound: {fileID: 2169387440914380834, guid: b4ac1742babbff4428fec1c82c12a3ff,
     type: 3}
+  AmmoText: {fileID: 5397115555606852330, guid: 773c470c69bb8b8459d09bf25dd7f6f0,
+    type: 3}
   shotPoint: {fileID: 1337704568523690993}
   timeBetweenShots: 0.8
   reloadTime: 2.5
   maxAmmo: 10
+  currentWeaponSlot: 0
 --- !u!82 &7859278419654946164
 AudioSource:
   m_ObjectHideFlags: 0

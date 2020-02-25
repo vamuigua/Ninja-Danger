@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Pickup : MonoBehaviour
 {
@@ -30,9 +31,9 @@ public class Pickup : MonoBehaviour
             if (isEmpty && weaponSwitching.currentAvailableWeapons < weaponSwitching.maxWeaponsToCarry)
             {
                 Instantiate(pickUpSound, transform.position, Quaternion.identity);
-                Instantiate(itemButton, player.weaponsSlots[i].transform, false);
+                GameObject weaponButton = Instantiate(itemButton, player.weaponsSlots[i].transform, false);
                 player.weaponsSlots[i].GetComponent<WeaponSlot>().empty = false;
-                player.addWeapon(weaponToEquip, i);
+                player.addWeapon(weaponToEquip, weaponButton, i);
                 Destroy(gameObject);
                 break;
             }

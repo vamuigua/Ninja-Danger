@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Weapon : MonoBehaviour
     public float reloadTime = 2f;
     public int maxAmmo = 10;
     public int currentWeaponSlot;
+    public int weaponSlotPosUI;
+    public TextMeshProUGUI ammoTextMesh;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class Weapon : MonoBehaviour
         source = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         weaponSwitching = GameObject.FindGameObjectWithTag("WeaponHolder").GetComponent<WeaponSwitching>();
+        ammoTextMesh.SetText(maxAmmo.ToString());
     }
 
     // Update is called once per frame
@@ -50,12 +54,17 @@ public class Weapon : MonoBehaviour
             weaponSlot.empty = true;
             weaponSlot.DropItem();
 
-            //check if only one weapon is left in the weapon slot
+            //check if only one weapon is left in the weapon slot & make it active
             if (weaponSwitching.currentAvailableWeapons == 1)
             {
                 foreach (Transform weapon in weaponSwitching.transform)
                 {
-                    weapon.gameObject.SetActive(true);
+                    if (weapon.gameObject.activeSelf == false)
+                    {
+                        weapon.gameObject.SetActive(true);
+                        int slot = weapon.gameObject.GetComponent<Weapon>().weaponSlotPosUI;
+                        GameObject.FindGameObjectWithTag("WeaponHolder").GetComponent<WeaponSwitching>().activeSlotImage[slot].SetActive(true);
+                    }
                 }
             }
 
@@ -75,6 +84,7 @@ public class Weapon : MonoBehaviour
         if (Time.time >= shotTime)
         {
             currentAmmo--;
+            ammoTextMesh.SetText(currentAmmo.ToString());
             source.Play();
             Instantiate(projectile, shotPoint.position, transform.rotation);
             shotTime = Time.time + timeBetweenShots;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -117,10 +118,12 @@ public class Player : MonoBehaviour
     }
 
     // adds the obtained Weapon to the weapons slot
-    public void addWeapon(Weapon newWeapon, int Slot_i)
+    public void addWeapon(Weapon newWeapon, GameObject weaponButton, int Slot_i)
     {
         Weapon newGun = Instantiate(newWeapon, transform.position, Quaternion.identity, WeaponHolder.transform);
         newGun.currentWeaponSlot = Slot_i;
+        newGun.ammoTextMesh = weaponButton.GetComponentInChildren<TextMeshProUGUI>();
+        newGun.weaponSlotPosUI = Slot_i;
         WeaponSwitching weaponSwitching = WeaponHolder.GetComponent<WeaponSwitching>();
         weaponSwitching.currentAvailableWeapons++;
         weaponSwitching.SelectWeapon();

@@ -7,6 +7,7 @@ public class WeaponSwitching : MonoBehaviour
     public int selectedWeapon = 0;
     public int maxWeaponsToCarry = 4;
     public int currentAvailableWeapons;
+    public GameObject[] activeSlotImage;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class WeaponSwitching : MonoBehaviour
         int previousSelectedWeapon = selectedWeapon;
 
         //Scroll Up To change to Next Weapon
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetKeyDown(KeyCode.E))
         {
             if (selectedWeapon >= transform.childCount - 1)
             {
@@ -31,7 +32,7 @@ public class WeaponSwitching : MonoBehaviour
             }
         }
         //Scroll Down To change to Previous Weapon
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetKeyDown(KeyCode.Q))
         {
             if (selectedWeapon <= 0)
             {
@@ -68,7 +69,7 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
-    //sets the active property of the currently available weapon gameobjects 
+    //sets the active property of the currently available weapons & its weaponslot in the WeaponsUI
     public void SelectWeapon()
     {
         int i = 0;
@@ -77,10 +78,14 @@ public class WeaponSwitching : MonoBehaviour
             if (i == selectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
+                int slot_no = weapon.gameObject.GetComponent<Weapon>().weaponSlotPosUI;
+                activeSlotImage[slot_no].SetActive(true);
             }
             else
             {
                 weapon.gameObject.SetActive(false);
+                int slot_no = weapon.gameObject.GetComponent<Weapon>().weaponSlotPosUI;
+                activeSlotImage[slot_no].SetActive(false);
             }
             i++;
         }
