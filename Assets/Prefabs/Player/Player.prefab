@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efc95af72b06124f8baabc3874376a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponHolder: {fileID: 0}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -489,6 +490,8 @@ MonoBehaviour:
   hurtSounds: []
   speed: 30
   health: 5
+  waitWinSec: 5
+  bossIsDead: 0
   availableWeapons: []
 --- !u!50 &2391802969110346836
 Rigidbody2D:

@@ -50,9 +50,14 @@ public class Enemy : MonoBehaviour
                 }
             }
 
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            Instantiate(deathSound, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            destroyEnemy();
         }
+    }
+
+    //Destroy the enemy
+    public void destroyEnemy(){
+        Instantiate(deathEffect, transform.position, transform.rotation);
+        Instantiate(deathSound, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

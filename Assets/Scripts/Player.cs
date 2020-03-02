@@ -23,12 +23,15 @@ public class Player : MonoBehaviour
 
     public float speed;
     public int health;
+    public int waitWinSec;
+    public bool bossIsDead;
 
     [HideInInspector]
     public List<Weapon> availableWeapons = new List<Weapon>();
 
     void Start()
     {
+        bossIsDead = false;
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -51,6 +54,12 @@ public class Player : MonoBehaviour
         {
             cameraAnim.SetBool("isMoving", false);
             anim.SetBool("isRunning", false);
+        }
+
+        //destroy all enemies when the boss is dead
+        if(bossIsDead == true && FindObjectOfType<Enemy>() != null){
+            FindObjectOfType<Enemy>().destroyEnemy();
+            StartCoroutine(waitDeathSeconds(waitWinSec));
         }
     }
 
@@ -127,5 +136,12 @@ public class Player : MonoBehaviour
         WeaponSwitching weaponSwitching = WeaponHolder.GetComponent<WeaponSwitching>();
         weaponSwitching.currentAvailableWeapons++;
         weaponSwitching.SelectWeapon();
+    }
+
+    //wait for some seconds before playing the win scene
+    IEnumerator waitDeathSeconds(int waitWinSec){
+        yield return new WaitForSeconds(waitWinSec); 
+        sceneTransitionAnim.OnLoadScene("Win");
+
     }
 }

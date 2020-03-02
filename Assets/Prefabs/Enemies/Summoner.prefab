@@ -117,6 +117,8 @@ MonoBehaviour:
   player: {fileID: 0}
   pickups:
   - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
+  - {fileID: 4889254047244226685, guid: 4eda973a482251346b96db1713e42322, type: 3}
+  - {fileID: 5704427823336214623, guid: 48e3f75363a795a4a9def044854405d7, type: 3}
   healthPickup: {fileID: 2459342809867847891, guid: 1ebd72978b39f994aa41938409c11444,
     type: 3}
   deathEffect: {fileID: 6736311362857466173, guid: a8481d6c9b0813b49b27d20a0bc3f491,
