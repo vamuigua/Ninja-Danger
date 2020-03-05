@@ -12,13 +12,14 @@ public class Weapon : MonoBehaviour
     public GameObject projectile;
     public GameObject reloadSound;
     public Transform shotPoint;
+    public GameObject weaponPickUp;
 
     private float shotTime;
-    private int currentAmmo;
 
     public float timeBetweenShots;
     public float reloadTime = 2f;
     public int maxAmmo = 10;
+    public int currentAmmo;
     public int currentWeaponSlot;
     public int weaponSlotPosUI;
     public TextMeshProUGUI ammoTextMesh;
@@ -52,7 +53,7 @@ public class Weapon : MonoBehaviour
             //get the WeaponSlot for the current active weapon
             WeaponSlot weaponSlot = player.weaponsSlots[currentWeaponSlot].GetComponent<WeaponSlot>();
             weaponSlot.empty = true;
-            weaponSlot.DropItem();
+            weaponSlot.DestroyWeapon();
 
             //check if only one weapon is left in the weapon slot & make it active
             if (weaponSwitching.currentAvailableWeapons == 1)

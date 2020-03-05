@@ -57,7 +57,8 @@ public class Player : MonoBehaviour
         }
 
         //destroy all enemies when the boss is dead
-        if(bossIsDead == true && FindObjectOfType<Enemy>() != null){
+        if (bossIsDead == true && FindObjectOfType<Enemy>() != null)
+        {
             FindObjectOfType<Enemy>().destroyEnemy();
             StartCoroutine(waitDeathSeconds(waitWinSec));
         }
@@ -139,9 +140,9 @@ public class Player : MonoBehaviour
     }
 
     //wait for some seconds before playing the win scene
-    IEnumerator waitDeathSeconds(int waitWinSec){
-        yield return new WaitForSeconds(waitWinSec); 
+    IEnumerator waitDeathSeconds(int waitWinSec)
+    {
+        yield return new WaitForSeconds(waitWinSec);
         sceneTransitionAnim.OnLoadScene("Win");
-
     }
 }
